@@ -1,3 +1,4 @@
+// Xấp xỉ nghiệm của pt f(x) = 0 bằng pp chia đôi
 #include<iostream>
 #include<cmath>
 using namespace std;
@@ -10,7 +11,7 @@ void xapxinghiem (float a, float b, float c)
 {
     float p;
     int count=0;
-    while (b-a>=c)
+    while (abs(findFx(p)) > c)  /* |a - b| > c và f(p) != 0 */
     {
         p = (a+b)*0.5;
         if (findFx(p)*findFx(a)<0) b = p;
