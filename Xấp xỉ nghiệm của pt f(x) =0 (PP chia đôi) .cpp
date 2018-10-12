@@ -9,7 +9,8 @@ float findFx (float x)
 }
 void xapxinghiem (float a, float b, float c)
 {
-    float p;
+    float p,k;
+    k = abs(a-b);
     int count=0;
     while (abs(findFx(p)) > c)  /* |a - b| > c và f(p) != 0 */
     {
@@ -18,8 +19,9 @@ void xapxinghiem (float a, float b, float c)
         else a = p;
         count++;
     }
-    cout << "Nghiem xap xi cua pt la: " << p << endl;
-    cout << "So lan lap: " << count << endl;
+    cout << "Nghiem xap xi cua pt la: " << p 
+         << "\nSo lan lap la: " << count
+         << "\nSai so la: " << k/(pow(2,count));
 }
 int main ()
 {
@@ -31,4 +33,3 @@ int main ()
     xapxinghiem(a,b,c);
     return 0;
 }
-
