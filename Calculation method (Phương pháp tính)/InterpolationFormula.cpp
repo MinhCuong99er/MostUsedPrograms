@@ -1,4 +1,4 @@
-// Áp dụng Công thức nội suy Lagrange và Newton tính gần đúng giá trị đa thức
+// Áp dụng Công thức nội suy Lagrange và Newton tính gần đúng giá trị đa thức 
 
 #include <cmath>
 #include <iostream>
