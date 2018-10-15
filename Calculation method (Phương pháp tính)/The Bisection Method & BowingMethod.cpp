@@ -36,7 +36,7 @@ double theBowingMethod (double a, double b, double c) // Phương pháp dây cun
         {
             b = p;
             p = a - (b-a)*caculacateF_x(a)/(caculacateF_x(b) - caculacateF_x(a));
-            count++;
+            count++; 
         }
     }
     else
