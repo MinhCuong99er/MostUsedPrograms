@@ -26,7 +26,8 @@ double random(double a, double b)
 void tangentMethod(double a, double b, double c) // phương pháp Newton (Phương pháp tiếp tuyến)
 {
     srand(time(NULL));
-    double x = random(a,b),y;
+    double y;
+    double x = random(a,b);
     int count=0;
     while (abs(x-y) > c)
     {
@@ -35,7 +36,8 @@ void tangentMethod(double a, double b, double c) // phương pháp Newton (Phư�
         count++;
     }
     cout << "Nghiem xap xi cua pt la: " << x
-         << "\nSo lan lap la: " << count << "\n\n";
+         << "\nSo lan lap la: " << count
+         << "\nSai so la: " << abs(x-y) << "\n\n";
 }
 int main ()
 {
