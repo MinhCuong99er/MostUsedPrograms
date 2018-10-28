@@ -6,6 +6,8 @@
 #include <ctime>
 #include <iostream>
 using namespace std;
+const double pi = 16 * atan(0.2) - 4*atan(1.0/239);
+const double euler = 2.71828182845904523536;
 
 double caculacateF_x (double x) // Khai báo hàm f(x)
 {
@@ -18,7 +20,8 @@ double random(double a, double b) // Hàm Random số thực từ a đến b
 void loopMethod (double a, double b, double c) // phương pháp lặp
 {
     srand(time(NULL));
-    double x = random(a,b),y;
+    double x = random(a,b);
+    double y;
     int count=0;
     while (abs(x-y) > c)
     {
@@ -27,7 +30,8 @@ void loopMethod (double a, double b, double c) // phương pháp lặp
         count++;
     }
     cout << "Nghiem xap xi cua pt la: " << x
-         << "\nSo lan lap la: " << count << "\n\n";
+         << "\nSo lan lap la: " << count
+         << "\nSai so la: " << abs(x-y) << "\n\n";
 }
 int main ()
 {
