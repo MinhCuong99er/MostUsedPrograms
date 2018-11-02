@@ -37,10 +37,6 @@ void output (float arr[][MAX], int n)
                     cout << fixed << setprecision (5) << arr[i][j] << " ";
                 else cout << " " << fixed << setprecision (5) << arr[i][j] << " ";
             }
-//            if (arr[i][j]<10 && arr[i][j] == (long) arr[i][j]) cout << "0" << arr[i][j] << " ";
-//            else if (arr[i][j]>=0 && arr[i][j] != (long) arr[i][j]) cout << " " << arr[i][j] << " ";
-//            else cout << arr[i][j] << " ";
-            //cout << arr[i][j] << " ";
         }
         cout << endl;
     }
