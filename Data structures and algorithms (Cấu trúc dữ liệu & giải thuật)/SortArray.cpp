@@ -3,14 +3,14 @@
 #include<ctime>
 using namespace std;
 
-void arrayIn (int arr[], int &size)
+void arrayIn (int array[], int &size)
 {
     srand(time(NULL));
-    for (int i=0;i<size;i++) arr[i] = rand()%90;
+    for (int i=0;i<size;i++) array[i] = rand()%99;
 }
-void arrayOut (int arr[], int size)
+void arrayOut (int array[], int size)
 {
-    for (int i=0;i<size;i++) cout << arr[i] << " ";
+    for (int i=0;i<size;i++) cout << array[i] << " ";
     cout << "\n";
 }
 void arrayCopy (int a[], int b[], int size)
@@ -19,11 +19,11 @@ void arrayCopy (int a[], int b[], int size)
 }
 
 // Sắp xếp nổi bọt - T = O(n*n)
-void BubbleSort (int arr[], int size)
+void BubbleSort (int array[], int size)
 {
     cout << "+ Bubble Sort:\t  ";
     int b[size],i,j;
-    arrayCopy(arr,b,size);
+    arrayCopy(array,b,size);
     for (i=0;i<size-1;i++)
     {
         for (j=0;j<size-1;j++)
@@ -34,11 +34,11 @@ void BubbleSort (int arr[], int size)
     arrayOut(b,size);
 }
 // Sắp xếp lựa chọn - T = O(n*n)
-void SelectionSort(int arr[], int size)
+void SelectionSort(int array[], int size)
 {
     cout << "+ Selection Sort: ";
     int b[size],i,j,min;
-    arrayCopy(arr,b,size);
+    arrayCopy(array,b,size);
 	for (i=0;i<size-1;i++)
 	{
 		min = i;
@@ -49,11 +49,11 @@ void SelectionSort(int arr[], int size)
 	arrayOut(b,size);
 }
 // Sắp xếp xen vào - T = O(n*n)
-void InsertionSort (int arr[], int size)
+void InsertionSort (int array[], int size)
 {
     cout << "+ Insertion Sort: ";
     int b[size],i,j,temp;
-    arrayCopy(arr,b,size);
+    arrayCopy(array,b,size);
     for (i=1;i<size;i++)
     {
         /* Di chuyển các phần tử có giá trị lớn hơn giá trị
@@ -149,11 +149,11 @@ void MergeSortArray (int array[],int size)
     int b[size];
     cout << "+ Merge Sort:\t  ";
     arrayCopy(array,b,size);
-    MergeSort(array,0,size-1);
-    arrayOut(array,size);
+    MergeSort(b,0,size-1);
+    arrayOut(b,size);
 }
 // Sắp xếp sử dụng cây thứ tự bộ phận - T = O(nlog(n))
-void Heap(int array[], int length, int i)
+void Heapify(int array[], int length, int i)
 {
 	int largest = i;
 	int left = 2*i+1;
@@ -164,21 +164,21 @@ void Heap(int array[], int length, int i)
 	if (largest != i)
 	{
 		swap(array[i], array[largest]);
-		Heap(array,length,largest);
+		Heapify(array,length,largest);
 	}
 }
-void HeapSort (int arr[], int size)
+void HeapSort (int array[], int size)
 {
     cout << "+ Heap Sort:\t  ";
-    int b[size],i,j,min;
-    arrayCopy(arr,b,size);
+    int b[size],i;
+    arrayCopy(array,b,size);
     for (int i = size/2-1; i>=0; i--)
-		Heap(b,size,i);
+		Heapify(b,size,i);
 
 	for (int i = size-1; i>=0 ; i--)
 	{
 		swap(b[0],b[i]);
-		Heap(b,i,0);
+		Heapify(b,i,0);
 	}
     arrayOut(b,size);
 }
@@ -188,12 +188,12 @@ int main()
     srand(time(NULL));
     size = rand()%10+2;
     cout << "The number of elements of the array is: " << size << endl;
-    int array[size],b[size];
+    int array[size];
     arrayIn(array,size);
-    cout << "The array has just entered is: ";
+    cout << "The array which has just been entered is: ";
     arrayOut(array,size);
 
-    cout << "\nArray after sorting is:\n";
+    cout << "\nThe array after sorting is:\n";
     BubbleSort(array,size);
     SelectionSort(array,size);
     InsertionSort(array,size);
@@ -203,4 +203,3 @@ int main()
 
     return 0;
 }
-
